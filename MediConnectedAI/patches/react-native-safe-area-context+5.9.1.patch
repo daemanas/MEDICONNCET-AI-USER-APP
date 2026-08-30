@@ -1,0 +1,51 @@
+diff --git a/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt b/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt
+index 52450f0..503b8cf 100644
+--- a/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt
++++ b/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt
+@@ -12,11 +12,36 @@ set(LIB_ANDROID_GENERATED_COMPONENTS_DIR ${LIB_ANDROID_GENERATED_JNI_DIR}/react/
+ file(GLOB LIB_CUSTOM_SRCS CONFIGURE_DEPENDS *.cpp ${LIB_COMMON_DIR}/react/renderer/components/${LIB_LITERAL}/*.cpp)
+ file(GLOB LIB_CODEGEN_SRCS CONFIGURE_DEPENDS ${LIB_ANDROID_GENERATED_JNI_DIR}/*.cpp ${LIB_ANDROID_GENERATED_COMPONENTS_DIR}/*.cpp)
+ 
++# Keep object paths below Windows MAX_PATH and copy headers into the same short directory.
++set(SAC_SHORT_SRCS)
++foreach(src ${LIB_CUSTOM_SRCS} ${LIB_CODEGEN_SRCS})
++  get_filename_component(fname ${src} NAME)
++  set(dst "${CMAKE_CURRENT_BINARY_DIR}/sac_${fname}")
++  configure_file(${src} ${dst} COPYONLY)
++  list(APPEND SAC_SHORT_SRCS ${dst})
++endforeach()
++file(GLOB SAC_HDRS CONFIGURE_DEPENDS
++  *.h
++  ${LIB_COMMON_DIR}/react/renderer/components/${LIB_LITERAL}/*.h
++  ${LIB_ANDROID_GENERATED_JNI_DIR}/*.h
++  ${LIB_ANDROID_GENERATED_COMPONENTS_DIR}/*.h
++)
++foreach(hdr ${SAC_HDRS})
++  get_filename_component(fname ${hdr} NAME)
++  configure_file(${hdr} "${CMAKE_CURRENT_BINARY_DIR}/${fname}" COPYONLY)
++endforeach()
++# Both the native JNI and generated codegen directories contain this filename.
++# Explicitly prefer codegen because it declares NativeSafeAreaContextSpecJSI.
++configure_file(
++  ${LIB_ANDROID_GENERATED_JNI_DIR}/safeareacontext.h
++  "${CMAKE_CURRENT_BINARY_DIR}/safeareacontext.h"
++  COPYONLY
++)
++
+ add_library(
+   ${LIB_TARGET_NAME}
+   SHARED
+-  ${LIB_CUSTOM_SRCS}
+-  ${LIB_CODEGEN_SRCS}
++  ${SAC_SHORT_SRCS}
+ )
+ 
+ target_include_directories(
+@@ -26,6 +51,7 @@ target_include_directories(
+   ${LIB_COMMON_DIR}
+   ${LIB_ANDROID_GENERATED_JNI_DIR}
+   ${LIB_ANDROID_GENERATED_COMPONENTS_DIR}
++  ${CMAKE_CURRENT_BINARY_DIR}
+ )
+ 
+ # https://github.com/react-native-community/discussions-and-proposals/discussions/816

@@ -1,0 +1,25 @@
+diff --git a/node_modules/react-native-gesture-handler/android/CMakeLists.txt b/node_modules/react-native-gesture-handler/android/CMakeLists.txt
+index ae44354..36166ed 100644
+--- a/node_modules/react-native-gesture-handler/android/CMakeLists.txt
++++ b/node_modules/react-native-gesture-handler/android/CMakeLists.txt
+@@ -7,10 +7,19 @@ set(CMAKE_CXX_STANDARD 20)
+ file(GLOB_RECURSE rn_gesture_handler_SRCS CONFIGURE_DEPENDS ../shared/shadowNodes/*.cpp)
+ file(GLOB_RECURSE rn_gesture_handler_codegen_SRCS CONFIGURE_DEPENDS ./build/generated/source/codegen/jni/*.cpp)
+ 
++# Copy shadow-node sources into the CMake binary dir (Windows ninja MAX_PATH).
++set(GH_SHORT_SRCS)
++foreach(src ${rn_gesture_handler_SRCS})
++  get_filename_component(fname ${src} NAME)
++  set(dst "${CMAKE_CURRENT_BINARY_DIR}/gh_${fname}")
++  configure_file(${src} ${dst} COPYONLY)
++  list(APPEND GH_SHORT_SRCS ${dst})
++endforeach()
++
+ add_library(
+   react_codegen_rngesturehandler_codegen
+   SHARED
+-  ${rn_gesture_handler_SRCS}
++  ${GH_SHORT_SRCS}
+   ${rn_gesture_handler_codegen_SRCS}
+ )
+ 

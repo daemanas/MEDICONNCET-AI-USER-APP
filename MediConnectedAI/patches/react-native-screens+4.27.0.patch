@@ -1,0 +1,23 @@
+diff --git a/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt b/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt
+index 1111111..2222222 100644
+--- a/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt
++++ b/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt
+@@ -23,11 +23,20 @@ add_compile_options(
+ file(GLOB LIB_CUSTOM_SRCS CONFIGURE_DEPENDS *.cpp ${LIB_COMMON_COMPONENTS_DIR}/*.cpp ${LIB_COMMON_COMPONENTS_DIR}/utils/*.cpp)
+ file(GLOB LIB_CODEGEN_SRCS CONFIGURE_DEPENDS ${LIB_ANDROID_GENERATED_COMPONENTS_DIR}/*.cpp)
+ 
++set(SCREENS_SHORT_SRCS)
++foreach(src ${LIB_CUSTOM_SRCS})
++  get_filename_component(fname ${src} NAME)
++  set(dst "${CMAKE_CURRENT_BINARY_DIR}/sc_${fname}")
++  configure_file(${src} ${dst} COPYONLY)
++  list(APPEND SCREENS_SHORT_SRCS ${dst})
++endforeach()
++
+ add_library(
+   ${LIB_TARGET_NAME}
+   SHARED
+-  ${LIB_CUSTOM_SRCS}
++  ${SCREENS_SHORT_SRCS}
+   ${LIB_CODEGEN_SRCS}
+ )

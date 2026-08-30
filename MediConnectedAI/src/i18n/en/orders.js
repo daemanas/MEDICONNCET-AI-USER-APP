@@ -1,0 +1,16 @@
+export const orders = {
+  title: 'Orders',
+  empty: 'You have no medicine orders yet.',
+  place: 'Order medicine',
+  qty: 'Quantity',
+  confirmOrder: 'Confirm order',
+  pharmacy: 'Pharmacy',
+  status: 'Status',
+  timeline: 'Status timeline',
+  cancelOrder: 'Cancel order',
+  fulfillment: 'Pickup or delivery',
+  notes: 'Notes for the pharmacy',
+  noPharmacy: 'No pharmacy found nearby.',
+  otherInDistrict: 'Other pharmacies in the same district',
+  orderPlaced: 'Order placed. The pharmacy will review it.',
+};
