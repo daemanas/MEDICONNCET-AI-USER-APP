@@ -6,7 +6,7 @@ import {colors, space, type} from '../constants/theme';
 import {i18n} from '../i18n';
 import {PrimaryButton} from '../components/PrimaryButton';
 import {confirmCall} from '../components/confirmCall';
-
+  
 export function EmergencyScreen() {
   const nav = useNavigation();
   return (
