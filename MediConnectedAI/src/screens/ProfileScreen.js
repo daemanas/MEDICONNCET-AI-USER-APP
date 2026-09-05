@@ -17,7 +17,7 @@ const ACCOUNT_ROWS = [
   {key: 'privacySecurity', icon: '◇', tone: '#EAF6FF'},
   {key: 'helpSupport', icon: '◉', tone: '#FFF6E4'},
 ];
-
+ 
 const HEALTH_CARDS = [
   {key: 'bloodPressure', icon: '♥', tone: '#EEF9F3', valueKey: 'bloodPressureValue', statusKey: 'normal'},
   {key: 'bloodSugar', icon: '●', tone: '#EEF7FF', valueKey: 'bloodSugarValue', statusKey: 'normal'},
