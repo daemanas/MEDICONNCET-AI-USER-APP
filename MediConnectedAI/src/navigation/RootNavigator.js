@@ -29,6 +29,8 @@ import {AiAssistantScreen} from '../screens/AiAssistantScreen';
 import {AppointmentsScreen} from '../screens/AppointmentsScreen';
 import {HospitalsScreen} from '../screens/HospitalsScreen';
 import {ClinicsScreen} from '../screens/ClinicsScreen';
+import {DiagnosticCentresScreen} from '../screens/DiagnosticCentresScreen';
+import {MedicalShopsScreen} from '../screens/MedicalShopsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +58,8 @@ export function RootNavigator() {
             <Stack.Screen name="Main" component={MainTabs} options={{headerShown: false}} />
             <Stack.Screen name="Hospitals" component={HospitalsScreen} options={{headerShown: false}} />
             <Stack.Screen name="Clinics" component={ClinicsScreen} options={{headerShown: false}} />
+            <Stack.Screen name="DiagnosticCentres" component={DiagnosticCentresScreen} options={{headerShown: false}} />
+            <Stack.Screen name="MedicalShops" component={MedicalShopsScreen} options={{headerShown: false}} />
             <Stack.Screen name="ProviderList" component={ProviderListScreen} />
             <Stack.Screen name="ProviderDetail" component={ProviderDetailScreen} options={{title: i18n.services('details')}} />
             <Stack.Screen name="Doctors" component={DoctorsScreen} options={{title: i18n.services('doctors')}} />

@@ -28,8 +28,7 @@ const MAIN_CATEGORIES = [
     subtitle: 'Book tests & path labs',
     icon: '🧬',
     color: '#FCE4EC',
-    screen: 'ProviderList',
-    params: {type: 'DIAGNOSTIC_CENTRE', titleKey: 'diagnostics'},
+    screen: 'DiagnosticCentres',
   },
   {
     key: 'medicalShop',
@@ -37,8 +36,7 @@ const MAIN_CATEGORIES = [
     subtitle: 'Pharmacies & medicine stores',
     icon: '💊',
     color: '#FFF8E1',
-    screen: 'ProviderList',
-    params: {type: 'PHARMACY', titleKey: 'pharmacies'},
+    screen: 'MedicalShops',
   },
 ];
 
