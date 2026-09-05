@@ -1,0 +1,285 @@
+import {StyleSheet} from 'react-native';
+import {colors, radius, space} from '../constants/theme';
+
+export const styles = StyleSheet.create({
+  card: {
+    backgroundColor: colors.surface,
+    borderRadius: radius.lg,
+    padding: 14,
+    marginBottom: space.md,
+    borderWidth: 1,
+    borderColor: '#EAEAEA',
+  },
+  topRow: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  imageContainer: {
+    width: 110,
+    height: 115,
+    borderRadius: radius.md,
+    overflow: 'hidden',
+    position: 'relative',
+    backgroundColor: colors.primarySoft,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  imagePlaceholder: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#E7F5EE',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  placeholderIcon: {
+    fontSize: 38,
+  },
+  favButton: {
+    position: 'absolute',
+    top: 6,
+    right: 6,
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: 'rgba(255, 255, 255, 0.92)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  favIcon: {
+    fontSize: 13,
+  },
+  imageBadge: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(16, 40, 30, 0.88)',
+    paddingVertical: 4,
+    paddingHorizontal: 4,
+  },
+  imageBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 9.5,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  bodyContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+  titleCol: {
+    flex: 1,
+    marginRight: 6,
+  },
+  nameVerifiedRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  nameText: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: colors.text,
+    flexShrink: 1,
+  },
+  verifiedBadge: {
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  verifiedIcon: {
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: '900',
+  },
+  subTypeText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: colors.textSoft,
+    marginTop: 2,
+  },
+  rightMetaCol: {
+    alignItems: 'flex-end',
+  },
+  distRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 2,
+  },
+  distIcon: {
+    fontSize: 11,
+  },
+  distText: {
+    fontSize: 11.5,
+    fontWeight: '600',
+    color: colors.textSoft,
+  },
+  statusChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    borderRadius: radius.pill,
+    gap: 4,
+    marginTop: 3,
+  },
+  statusOpen: {
+    backgroundColor: '#E7F5EE',
+  },
+  statusClosed: {
+    backgroundColor: colors.dangerSoft,
+  },
+  statusDot: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+  },
+  dotOpen: {
+    backgroundColor: colors.accent,
+  },
+  dotClosed: {
+    backgroundColor: colors.danger,
+  },
+  statusText: {
+    fontSize: 10.5,
+    fontWeight: '700',
+  },
+  textOpen: {
+    color: colors.primaryDark,
+  },
+  textClosed: {
+    color: colors.danger,
+  },
+  closesText: {
+    fontSize: 10.5,
+    color: colors.textSoft,
+    fontWeight: '500',
+    marginTop: 2,
+  },
+  callButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: colors.primarySoft,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 4,
+  },
+  callIcon: {
+    fontSize: 14,
+  },
+  locationRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    marginTop: 4,
+  },
+  locIcon: {
+    fontSize: 12,
+  },
+  locationText: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: colors.textMuted,
+    flex: 1,
+  },
+  ratingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    marginTop: 4,
+  },
+  starIcon: {
+    fontSize: 13,
+  },
+  ratingValue: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: colors.text,
+  },
+  reviewsText: {
+    fontSize: 12,
+    color: colors.textSoft,
+  },
+  tagsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 4,
+    marginTop: 6,
+  },
+  tagChip: {
+    backgroundColor: colors.primarySoft,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+    borderRadius: radius.sm,
+  },
+  tagText: {
+    fontSize: 11,
+    color: colors.primaryDark,
+    fontWeight: '600',
+  },
+  actionsRow: {
+    flexDirection: 'row',
+    gap: 10,
+    marginTop: 12,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#F0F4F2',
+  },
+  detailsButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 42,
+    borderRadius: radius.md,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+    gap: 6,
+  },
+  detailsIcon: {
+    fontSize: 13,
+    color: colors.primaryDark,
+    fontWeight: '700',
+  },
+  detailsText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: colors.primaryDark,
+  },
+  bookButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 42,
+    borderRadius: radius.md,
+    backgroundColor: colors.primaryDark,
+    gap: 6,
+  },
+  bookIcon: {
+    fontSize: 13,
+    color: '#FFFFFF',
+  },
+  bookText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+});

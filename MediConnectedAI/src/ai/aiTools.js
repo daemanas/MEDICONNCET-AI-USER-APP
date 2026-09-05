@@ -10,9 +10,9 @@ export function navigate(name, params) {
 
 export const aiTools = {
   findDoctors: params => navigate('Doctors', params),
-  findClinics: params => navigate('ProviderList', {type: 'CLINIC', titleKey: 'clinics', ...params}),
-  findHospitals: params => navigate('ProviderList', {type: 'HOSPITAL', titleKey: 'hospitals', ...params}),
-  findNursingHomes: params => navigate('ProviderList', {type: 'NURSING_HOME', titleKey: 'nursingHomes', ...params}),
+  findClinics: params => navigate('Clinics', params),
+  findHospitals: params => navigate('Hospitals', {filter: 'Hospitals', ...params}),
+  findNursingHomes: params => navigate('Hospitals', {filter: 'Nursing Homes', ...params}),
   findPharmacies: params => navigate('ProviderList', {type: 'PHARMACY', titleKey: 'pharmacies', ...params}),
   findLabs: params => navigate('ProviderList', {type: 'LABORATORY', titleKey: 'labs', ...params}),
   findDiagnosticCenters: params =>

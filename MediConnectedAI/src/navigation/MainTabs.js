@@ -2,16 +2,16 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeScreen} from '../screens/HomeScreen';
-import {OrdersScreen} from '../screens/OrdersScreen';
+import {AppointmentsScreen} from '../screens/AppointmentsScreen';
 import {ServicesHubScreen} from '../screens/ServicesHubScreen';
-import {MessagesScreen} from '../screens/MessagesScreen';
+import {DoctorsScreen} from '../screens/DoctorsScreen';
 import {ProfileScreen} from '../screens/ProfileScreen';
 import {colors} from '../constants/theme';
 
 const Tab = createBottomTabNavigator();
 
 function Icon({label, focused}) {
-  const map = {Home: '🏠', Orders: '📦', Services: '✚', Messages: '💬', Profile: '👤'};
+  const map = {Home: '🏠', Appointments: '📅', Services: '✚', Doctors: '👨‍⚕️', Profile: '👤'};
   return (
     <View style={[styles.iconWrap, label === 'Services' && styles.center, focused && styles.on]}>
       <Text style={styles.icon}>{map[label]}</Text>
@@ -30,27 +30,37 @@ export function MainTabs() {
         tabBarLabelStyle: {fontWeight: '700', fontSize: 11},
       }}>
       <Tab.Screen name="Home" component={HomeScreen} options={{tabBarIcon: ({focused}) => <Icon label="Home" focused={focused} />}} />
-      <Tab.Screen name="Orders" component={OrdersScreen} options={{tabBarIcon: ({focused}) => <Icon label="Orders" focused={focused} />}} />
+      <Tab.Screen name="Appointments" component={AppointmentsScreen} options={{tabBarIcon: ({focused}) => <Icon label="Appointments" focused={focused} />}} />
       <Tab.Screen
         name="Services"
         component={ServicesHubScreen}
         options={{tabBarIcon: ({focused}) => <Icon label="Services" focused={focused} />}}
       />
-      <Tab.Screen name="Messages" component={MessagesScreen} options={{tabBarIcon: ({focused}) => <Icon label="Messages" focused={focused} />}} />
+      <Tab.Screen name="Doctors" component={DoctorsScreen} options={{tabBarIcon: ({focused}) => <Icon label="Doctors" focused={focused} />}} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{tabBarIcon: ({focused}) => <Icon label="Profile" focused={focused} />}} />
     </Tab.Navigator>
   );
 }
 
 const styles = StyleSheet.create({
-  iconWrap: {alignItems: 'center', justifyContent: 'center'},
+  iconWrap: {
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
   center: {
-    width: 46,
-    height: 46,
-    borderRadius: 23,
-    backgroundColor: colors.primarySoft,
-    marginTop: -10,
+    width: 54,
+    height: 54,
+    borderRadius: 27,
+    backgroundColor: colors.primary,
+    marginTop: -16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#10201A',
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 8,
   },
   on: {},
-  icon: {fontSize: 18},
+  icon: {fontSize: 20, fontWeight: '600'},
 });
