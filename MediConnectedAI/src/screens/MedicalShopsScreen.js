@@ -62,7 +62,7 @@ export function MedicalShopsScreen() {
           <MedicalShopsCard 
             item={item} 
             onViewDetails={() => nav.navigate('ProviderDetail', {id: item.id, preview: item})}
-            onOrderMedicines={() => nav.navigate('Medicines', {q: item.name})}
+            onOrderMedicines={() => nav.navigate('Medicines', {shop: item})}
           />
         )}
       />

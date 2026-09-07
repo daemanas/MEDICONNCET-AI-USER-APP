@@ -13,6 +13,7 @@ import {ProviderDetailScreen} from '../screens/ProviderDetailScreen';
 import {DoctorsScreen} from '../screens/DoctorsScreen';
 import {SearchScreen} from '../screens/SearchScreen';
 import {MedicinesScreen} from '../screens/MedicinesScreen';
+import {CartScreen} from '../screens/CartScreen';
 import {CheckoutScreen} from '../screens/CheckoutScreen';
 import {OrderDetailScreen} from '../screens/OrderDetailScreen';
 import {PrescriptionsScreen} from '../screens/PrescriptionsScreen';
@@ -65,6 +66,7 @@ export function RootNavigator() {
             <Stack.Screen name="Doctors" component={DoctorsScreen} options={{title: i18n.services('doctors')}} />
             <Stack.Screen name="Search" component={SearchScreen} options={{title: i18n.t('searchPlaceholder')}} />
             <Stack.Screen name="Medicines" component={MedicinesScreen} options={{title: i18n.services('medicines')}} />
+            <Stack.Screen name="Cart" component={CartScreen} options={{headerShown: false}} />
             <Stack.Screen name="Checkout" component={CheckoutScreen} options={{title: i18n.orders('confirmOrder')}} />
             <Stack.Screen name="OrderDetail" component={OrderDetailScreen} options={{title: i18n.orders('title')}} />
             <Stack.Screen name="Prescriptions" component={PrescriptionsScreen} options={{title: i18n.reports('prescriptionsTitle')}} />

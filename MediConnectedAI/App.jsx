@@ -4,6 +4,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {SessionProvider} from './src/store/SessionContext';
 import {NetworkProvider} from './src/store/NetworkContext';
+import {CartProvider} from './src/store/CartContext';
 import {RootNavigator} from './src/navigation/RootNavigator';
 import {initVoice} from './src/ai/voiceService';
 import {colors} from './src/constants/theme';
@@ -19,7 +20,9 @@ function App() {
         <StatusBar barStyle="dark-content" backgroundColor={colors.bg} />
         <NetworkProvider>
           <SessionProvider>
-            <RootNavigator />
+            <CartProvider>
+              <RootNavigator />
+            </CartProvider>
           </SessionProvider>
         </NetworkProvider>
       </SafeAreaProvider>
