@@ -314,7 +314,14 @@ const styles = StyleSheet.create({
   headerRow: {flexDirection: 'row', alignItems: 'center', marginBottom: space.md, gap: 8},
   headerTextWrap: {flex: 1, marginTop: 4},
   backIcon: {fontSize: 32, color: colors.text, fontWeight: '600'},
-  headerTitle: {fontSize: 34, fontWeight: '800', color: colors.text, letterSpacing: -0.5},
+
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: colors.text,
+    letterSpacing: -0.5
+},
+
   headerSubtitle: {fontSize: 14, color: colors.textMuted, marginTop: 2},
   clearBtn: {flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.primarySoft, borderRadius: 12, paddingVertical: 8, paddingHorizontal: 10},
   clearIcon: {fontSize: 18},
@@ -326,7 +333,15 @@ const styles = StyleSheet.create({
   bannerTitle: {fontSize: 15, fontWeight: '800', color: colors.text, marginBottom: 3},
   bannerSubtitle: {fontSize: 13, color: colors.textMuted},
   summaryRow: {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10},
-  sectionTitle: {fontSize: 26, fontWeight: '800', color: colors.text, letterSpacing: -0.3},
+
+  sectionTitle: {
+    fontSize: 20, 
+    fontWeight: '800', 
+    color: colors.text, 
+    letterSpacing: -0.3,
+    marginLeft: 10
+},
+
   continueText: {fontSize: 16, fontWeight: '700', color: colors.primaryDark},
   cartCard: {backgroundColor: colors.surface, borderRadius: 18, padding: 10, borderWidth: 1, borderColor: colors.border, marginBottom: 12, ...shadow},
   productCardContent: {flexDirection: 'row', alignItems: 'center', gap: 12},
@@ -353,7 +368,18 @@ const styles = StyleSheet.create({
   ctaIcon: {fontSize: 22, marginRight: 10},
   ctaTitle: {fontSize: 16, fontWeight: '800', color: colors.text},
   ctaSubtitle: {fontSize: 12, color: colors.textMuted, marginTop: 2},
-  addMoreBtn: {flexDirection: 'row', alignItems: 'center', backgroundColor: colors.surface, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#B9E7CD'},
+
+  addMoreBtn: {
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    backgroundColor: colors.surface, 
+    borderRadius: 14, 
+    paddingHorizontal: 4, 
+    paddingVertical: 10, 
+    borderWidth: 1, 
+    borderColor: '#B9E7CD'
+},
+
   addMoreIcon: {fontSize: 18, color: colors.primaryDark, fontWeight: '800', marginRight: 6},
   addMoreText: {fontSize: 14, fontWeight: '700', color: colors.primaryDark},
   infoRow: {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: colors.surface, borderRadius: 16, padding: 14, borderWidth: 1, borderColor: colors.border, marginBottom: 12},
@@ -364,7 +390,16 @@ const styles = StyleSheet.create({
   addressBlock: {flex: 1},
   addressText: {fontSize: 12, color: colors.textMuted, marginTop: 2},
   infoAction: {fontSize: 15, fontWeight: '700', color: colors.primaryDark},
-  summaryHeading: {fontSize: 24, fontWeight: '800', color: colors.text, marginBottom: 10, marginTop: 10},
+
+  summaryHeading: {
+    fontSize: 20, 
+    fontWeight: '800', 
+    color: colors.text, 
+    marginBottom: 10, 
+    marginTop: 10,
+    marginLeft: 10,
+},
+
   summaryCard: {backgroundColor: colors.surface, borderRadius: 18, paddingHorizontal: 16, paddingVertical: 12, borderWidth: 1, borderColor: colors.border},
   summaryRowLine: {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10},
   summaryLabel: {fontSize: 15, color: colors.text, fontWeight: '500'},
